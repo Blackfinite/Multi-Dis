@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaHeartbeat, FaLungs, FaMicroscope } from "react-icons/fa";
-import heroImage from "../assets/hero.jpg";
 
+// 🔹 FEATURES DATA
 const features = [
   {
     icon: FaHeartbeat,
@@ -59,7 +59,7 @@ export default function Home() {
           {/* IMAGE */}
           <div className="md:w-1/2 flex justify-center">
             <img
-              src={heroImage}
+              src="/hero.jpg"  // ✅ Use absolute path from public/
               alt="Medical AI"
               className="rounded-3xl shadow-xl w-full max-w-md md:max-w-md lg:max-w-md h-72 md:h-[380px] lg:h-[400px] object-cover hover:scale-105 transition duration-300"
             />

@@ -1,7 +1,7 @@
 import React from "react";
 import { FaHeartbeat, FaLungs, FaMicroscope } from "react-icons/fa";
-import aboutImage from "../assets/homePage.jpg";
 
+// 🔹 HIGHLIGHTS DATA
 const highlights = [
   {
     icon: FaHeartbeat,
@@ -47,7 +47,7 @@ export default function About() {
           {/* Image */}
           <div className="md:w-1/2 flex justify-center">
             <img
-              src={aboutImage}
+              src="/homePage.jpg"  // ✅ Move image to public/ and use absolute path
               alt="Medical AI About"
               className="rounded-3xl shadow-xl w-full max-w-sm md:max-w-md lg:max-w-md h-60 md:h-[340px] lg:h-[370px] object-cover hover:scale-105 transform transition duration-300"
             />

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { FaHeartbeat, FaLungs, FaMicroscope } from "react-icons/fa";
 import ImageUpload from "../components/ImageUpload";
 import PredictionCard from "../components/PredictionCard";
-import { predictDisease } from "../services/api";
 
 const diseases = [
   { id: "diabetes", name: "Diabetes", description: "Predict diabetes risk" },
@@ -16,16 +15,20 @@ export default function Predictions() {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // Dummy prediction function (no backend required)
   const handlePredict = async () => {
     if (!file || !selectedDisease) return;
     setLoading(true);
-    try {
-      const res = await predictDisease(file, selectedDisease.id);
-      setResult(res);
-    } catch (error) {
-      console.error(error);
-      alert("Prediction failed. Please try again.");
-    }
+
+    // simulate prediction delay
+    await new Promise((res) => setTimeout(res, 1000));
+
+    // set fake result
+    setResult({
+      disease: selectedDisease.name,
+      confidence: (Math.random() * 100).toFixed(2) + "%",
+    });
+
     setLoading(false);
   };
 
@@ -67,7 +70,6 @@ export default function Predictions() {
 
   return (
     <div className="p-4 max-w-3xl mx-auto font-[Inter] bg-white">
-
       <button
         className="mb-3 text-blue-600 font-semibold hover:underline text-sm transition-colors duration-300"
         onClick={() => {

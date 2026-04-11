@@ -1,25 +1,24 @@
 import { Link } from "react-router-dom";
-import { FaHeartbeat, FaLungs, FaMicroscope } from "react-icons/fa";
+import { FaLungs, FaVirus, FaBrain } from "react-icons/fa";
 
 // 🔹 FEATURES DATA
 const features = [
-  {
-    icon: FaHeartbeat,
-    title: "Diabetes",
-    description: "Predict diabetes risk using patient data with high accuracy",
-  },
   {
     icon: FaLungs,
     title: "Pneumonia",
     description: "Detect lung infections instantly using chest X-ray images",
   },
   {
-    icon: FaMicroscope,
-    title: "Malaria",
-    description: "Identify malaria parasites from blood smear images",
+    icon: FaVirus,
+    title: "COVID-19",
+    description: "Identify COVID-19 infection from chest X-ray or CT scan images",
+  },
+  {
+    icon: FaBrain,
+    title: "Brain Tumor",
+    description: "Detect brain tumors using MRI scan image analysis",
   },
 ];
-
 export default function Home() {
   return (
     <div className="bg-white min-h-screen font-[Inter] overflow-x-hidden">
